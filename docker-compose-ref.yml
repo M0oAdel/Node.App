@@ -1,0 +1,43 @@
+version: '3'
+services:
+  node-app:
+    image: express-node-app
+    container_name: express-node-app-container
+    build: .
+    volumes:
+      - .:/app:ro
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./.env 
+      
+
+
+      #ARG NODE_ENV
+#RUN if [ "$NODE_ENV" = "production" ]; \
+ #   then npm install --only=production; \
+  #  else npm install; \
+   # fi
+#######################################################3
+#FROM node:18-alpine as base
+
+
+
+#FROM base-alpine as development
+
+#WORKDIR /app
+#COPY package.json .
+#RUN npm install
+#COPY . .    
+#EXPOSE 3000
+#CMD ["npm","run" ,"start-dev"]
+
+#FROM base-alpine as production
+
+#WORKDIR /app
+#COPY package.json .
+#RUN npm install --only=production
+#COPY . .    
+#EXPOSE 3000
+#CMD ["npm","start"]
+#*\*
